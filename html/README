@@ -1,0 +1,72 @@
+# team18-homework3
+homework3 created for team18
+
+
+This web-app is designed to be a small collection of soundboards and their respective sounds. A visitor on the site can take a look at the public soundboards. Each soundboard has multiple sounds each with their respective pictures. A visitor can register which will give them additional features.
+
+A user that has registered will have access to their own profile where they can upload soundboards of their own choice. Each soundboard can have multiple sounds each with a a picture. A registered user has the option of making the soundboards either public or private. If a soundboard is marked as public, it will be a part of the public soundsboards that every visitor to the website has access to. Private soundsboards will only be available to the user that uploaded them. These soundboards can be deleted and edited. The user has the option to logout anytime
+
+
+
+Website Layout:
+
+HomePage (index.php) This is the landing site of the web-app where the public soundboards are made available. The visitor can scroll through the collection of soundboards using pagination. 
+
+Signup (___) This is the page where a user can sign up with their credentials. We used a standard md5 algo for encryption.Upon successful registration, user is redirected to the home page.
+
+Login (___) This is the page where a registered user can login to access their profile. Upon successful login, user is redirected to the home page.
+
+
+Profile (__) This page is where users can see their collection of soundboards. They will be able to click on both their public and private soundboards. They can also create new soundboards. Upon clicking a given soundboard, the user will be redirected to the next page. They can also edit their soundboard.
+
+Sounds (__) This page is where a user can play their sounds. They can also upload, delete, and edit a given sound.
+
+
+Database/Server Layout:
+
+*Admin users have special priviliges**
+
+
+The users are stored in a table where they store their login credentials. In addition they are given a unique user_id which will used to create a directory for them on the server where their sounds and pictures are stored. This way each user has their own directory on the server for ease of file manipulation. In addition each user is considered either an admin or non-admin user. Registration through the website will only be possible for non-admin users. *Admin users must be create specifically within the database.* The password of the user is not plain text, it is hashed with md5. 
+
+Every soundboard is given it's own folder in the server and its own unique id in the database. In this way the soundboard, whether it is public or private, can be shown appropriately on the profile page or the home page. Sounds and pictures are stored under each soundboard folder
+
+
+Example:
+
+/users/2/soundboards/board1/sound1.mp3
+/users/2/soundboards/board1/pic1.mp3
+
+
+The soundboard and sounds are tightly coupled in the database as one consitututes the other. 
+
+
+*Admin User Credentials for Creating/Deleting Users etc.
+
+username: admin
+
+first name: admin
+
+last name: admin 
+
+email: admin@admin.com
+
+password: admin
+
+
+****REACH GOALS AND IMPROVEMENT TILL HW4*******
+
+
+We still have to work further on:
+
+-Data validation and sanitization. We are using methods such as trim(), stripslashes(), htmlspecialchars(), filter var() { with options such as FILTER_SANITIZE_STRING, FILTER_SANITIZE_EMAIL, FILTER_FLAG_STRIP_HIGH }
+
+-Pagination throughout the website. As of now we have made pagination to work properly on the home page (index.php)
+
+-Picture for each board
+
+-Optimization for speed and security including compression, minification, source bundling, image sprites, caching, image optimization,
+
+
+
+
